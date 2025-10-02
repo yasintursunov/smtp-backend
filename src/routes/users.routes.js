@@ -1,0 +1,10 @@
+const express=require('express'); 
+const {listUsers,block,unblock,del,deleteUnverified}=require('../controllers/users.controller'); 
+const {adminGuard}=require('../middleware/adminGuard'); 
+const usersRouter=express.Router(); 
+usersRouter.use(adminGuard); 
+usersRouter.get('/',listUsers); 
+usersRouter.post('/block',block); 
+usersRouter.post('/unblock',unblock); 
+usersRouter.post('/delete',del); 
+usersRouter.post('/delete-unverified',deleteUnverified); module.exports={usersRouter};
