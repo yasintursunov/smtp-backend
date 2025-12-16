@@ -1,4 +1,5 @@
-const express=require('express'); const {register,confirm,login,logout,passwordForgot,passwordResetVerify,passwordReset}=require('../controllers/auth.controller');
+const express=require('express'); 
+const {register,confirm,login,logout,passwordForgot,passwordResetVerify,passwordReset}=require('../controllers/auth.controller');
 const authRouter=express.Router();
 authRouter.post('/register',register);
 authRouter.get('/confirm',confirm);
